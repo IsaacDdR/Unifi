@@ -85,6 +85,19 @@ $inputSysJson= json_encode($unifiSysinfo, JSON_PRETTY_PRINT);
 $sysinfoArray = json_decode($inputSysJson);
 
 $valuePrint = array_search("build", $unifiSysinfo);
+
+$sysInfoJson = json_decode(json_encode($unifiSysinfo), true);
+
+?>
+<?php
+function showKeys($input){
+  foreach($input as $x => $y){
+    echo $x;
+  }
+}
+showKeys($inputSysJson)
+
+
 ?>
 
 <?php
